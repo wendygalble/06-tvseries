@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import SerieCard from '../components/SerieCard'
 
 const Home = () => {
-  const myRequest = new Request('https://api.tvmaze.com/search/shows?q=girls')
+  const myRequest = new Request('https://api.tvmaze.com/shows')
   const [data, setData] = useState([])
 
   useEffect(() => {
