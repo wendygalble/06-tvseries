@@ -14,7 +14,7 @@ const SerieCard = ({ id, name, image, summary, officialSite }) => {
           </div>
 
           <div className='mx-auto mt-3'>
-            <a className='ver' href={officialSite}>Ver</a>
+            <a className='ver' href={officialSite}>WATCH NOW</a>
           </div>
         </div>
       </div>

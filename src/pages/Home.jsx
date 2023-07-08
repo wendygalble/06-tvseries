@@ -1,9 +1,19 @@
 import { useState, useEffect } from 'react'
 import SerieCard from '../components/SerieCard'
+import SearchBar from '../components/SearchBar'
 
 const Home = () => {
   const myRequest = new Request('https://api.tvmaze.com/shows')
   const [data, setData] = useState([])
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value)
+  }
+
+  const filteredData = data.filter((item) => {
+    return item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  })
 
   useEffect(() => {
     fetch(myRequest)
@@ -19,9 +29,10 @@ const Home = () => {
 
   return (
     <div className='container'>
+      <SearchBar handleSearchChange={handleSearch} />
       <div className='row'>
         {
-            data.map((item) => (
+            filteredData.map((item) => (
               <SerieCard key={item.id} {...item} />
             ))
         }
