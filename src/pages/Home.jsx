@@ -18,13 +18,14 @@ const Home = () => {
   }, [])
 
   return (
-    <div>
-      Home
-      {
-        data.map((item) => (
-          <SerieCard key={item.id} {...item} />
-        ))
+    <div className='container'>
+      <div className='row'>
+        {
+            data.map((item) => (
+              <SerieCard key={item.id} {...item} />
+            ))
         }
+      </div>
     </div>
   )
 }
