@@ -1,6 +1,6 @@
-const SerieCard = ({ id, name, image, summary }) => {
+const SerieCard = ({ id, name, image, summary, officialSite }) => {
   return (
-    <div className='col-md-3 my-3 d-flex align-items-stretch'>
+    <div className='col-md-4 my-4 d-flex align-items-stretch'>
       <div className='card'>
         <a href={`/serie/${id}`}>
           <div className='image-container'>
@@ -9,8 +9,12 @@ const SerieCard = ({ id, name, image, summary }) => {
         </a>
         <div className='card-body d-flex flex-column justify-content-between'>
           <div>
-            <h5 className='card-name'>{name}</h5>
+            <h1 className='card-name'>{name}</h1>
             <p className='card-name'>{summary}</p>
+          </div>
+
+          <div className='mx-auto mt-3'>
+            <a className='ver' href={officialSite}>Ver</a>
           </div>
         </div>
       </div>
