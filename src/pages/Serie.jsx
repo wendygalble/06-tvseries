@@ -18,9 +18,10 @@ const Serie = () => {
 
   return (
     <div>
-      <p>El ID de la serie es {serieId}</p>
-      <h2>NOMBRE: {serie.name}</h2>
-
+      <p>Serie {serieId}</p>
+      <h1>{serie.name}</h1>
+      <h5>RESUMEN</h5>
+      <p>{serie.summary}</p>
     </div>
   )
 }
