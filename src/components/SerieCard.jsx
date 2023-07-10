@@ -12,7 +12,7 @@ const SerieCard = ({ id, name, image, summary, officialSite }) => {
         <div className='card-body d-flex flex-column justify-content-between'>
           <div>
             <h1 className='card-name'>{name}</h1>
-            <p className='card-name'>{summary}</p>
+            <p className='card-summary'>{summary}</p>
           </div>
 
           <div className='mx-auto mt-3'>

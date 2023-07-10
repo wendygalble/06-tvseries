@@ -22,6 +22,19 @@
   cursor: pointer;
 }
 
+.card-name{
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  font-size: 60;
+  font-weight: regular;
+  color: #ffffff;
+  background-color: #0040567b;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+}
+
 .whatsapp-button svg {
   margin-right: 4px;
 }
