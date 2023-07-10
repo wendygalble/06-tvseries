@@ -49,6 +49,13 @@ const Serie = () => {
     <div className='container'>
       <div className='row'>
         <div>
+          <img
+            style={{ maxHeight: '500px', paddingLeft: '30px' }}
+            src={`${serie?.image?.original}`}
+          />
+        </div>
+
+        <div>
           <p>Serie {serieId}</p>
           <h1>{serie.name}</h1>
           <h5>RESUMEN</h5>
