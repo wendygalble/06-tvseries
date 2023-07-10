@@ -1,6 +1,9 @@
-const Personajes = () => {
+const Personajes = ({ person, character }) => {
   return (
-    <div>Personajes</div>
+    <div>
+      <h5>{person.name}</h5>
+      <p>As {character.name}</p>
+    </div>
   )
 }
 

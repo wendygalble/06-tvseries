@@ -1,12 +1,26 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Episodios from '../components/Episodios'
+import Personajes from '../components/Personajes'
 
 const Serie = () => {
   const myRequest = new Request('https://api.tvmaze.com/shows/1/episodes')
+  const [personajes, setPersonajes] = useState([])
   const [episodios, setEpisodios] = useState([])
   const [serie, setSerie] = useState([])
   const serieId = useParams().id
+
+  useEffect(() => {
+    fetch('https://api.tvmaze.com/shows/1/cast')
+      .then((response) => {
+        return response.json()
+      }).then((per) => {
+        console.log(per)
+        setPersonajes(per)
+      }).catch((error) => {
+        console.error(error)
+      })
+  }, [])
 
   useEffect(() => {
     fetch(myRequest)
@@ -44,6 +58,13 @@ const Serie = () => {
         {
         episodios.map((item) => (
           <Episodios key={item.id} {...item} />
+        ))
+
+        }
+
+        {
+        personajes.map((item) => (
+          <Personajes key={item.id} {...item} />
         ))
 
         }
