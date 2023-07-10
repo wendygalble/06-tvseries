@@ -1,8 +1,8 @@
 const Episodios = ({ name, season }) => {
   return (
     <div>
-      <p>{name}</p>
-      <p>{season}</p>
+      <p>Nombre del episodio: {name}</p>
+      <p>Temporada: {season}</p>
     </div>
   )
 }
