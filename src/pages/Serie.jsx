@@ -4,14 +4,14 @@ import Episodios from '../components/Episodios'
 import Personajes from '../components/Personajes'
 
 const Serie = () => {
-  const myRequest = new Request('https://api.tvmaze.com/shows/1/episodes')
   const [personajes, setPersonajes] = useState([])
   const [episodios, setEpisodios] = useState([])
   const [serie, setSerie] = useState([])
   const serieId = useParams().id
+  const myRequest = new Request(`https://api.tvmaze.com/shows/${serieId}/episodes`)
 
   useEffect(() => {
-    fetch('https://api.tvmaze.com/shows/1/cast')
+    fetch(`https://api.tvmaze.com/shows/${serieId}/cast`)
       .then((response) => {
         return response.json()
       }).then((per) => {
